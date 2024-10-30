@@ -1,0 +1,100 @@
+<!-- Banner Style One Start -->
+<section class="banner-style-one">
+  <div class="parallax" style="background-image: url(assets/images/pattren-3.png);"></div>
+  <div class="container">
+    <div class="row">
+      <div class="banner-details text-center">
+        <h2>Profile</h2>
+        <p>Our values have vaulted us to the top of our industry.</p>
+      </div>
+    </div>
+  </div>
+  <div class="breadcrums">
+    <div class="container">
+      <div class="row">
+        <ul class="breadcrumb-list">
+          <li>
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i> Home
+            </a>
+          </li>
+          <li class="current">Profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://localhost:44340/api/UsersBassam/getImages/{{user.image}}" alt="Profile Image" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" (click)="Orders()" role="tab" aria-controls="profile" aria-selected="false">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" routerLink="/subscription-gym/{{user.userId}}" role="tab" aria-controls="profile" aria-selected="false">Subscriptions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="profile-edit-btn btn btn-primary" (click)="editProfile()">Edit Profile</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 offset-md-4">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Name</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.fristName }} {{ user.lastName }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Email</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.email }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Phone</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.phoneNumber }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Address</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.address }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <!-- Additional sections can be placed here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
